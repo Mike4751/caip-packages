@@ -1,0 +1,74 @@
+{
+  "name": "caip-hedera",
+  "description": "CAIP Hedera utils",
+  "version": "1.0.0",
+  "author": "Michael Lett <github.com/mike4751>",
+  "license": "MIT",
+  "keywords": [
+    "caip",
+    "blockchain",
+    "standard",
+    "hedera",
+    "parse",
+    "format",
+    "chainId",
+    "accountId",
+    "assetId"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "browser": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "unpkg": "dist/index.umd.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "homepage": "https://github.com/mike4751/caip-packages/caip-hedera",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mike4751/caip-packages/caip-hedera.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mike4751/caip-packages/caip-hedera/issues"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "clean": "rm -rf dist",
+    "build:microbundle": "./node_modules/.bin/microbundle --compress=false",
+    "build": "yarn clean && yarn build:microbundle",
+    "test": "jest",
+    "lint": "tsdx lint src test",
+    "prepare": "yarn lint && yarn build && yarn test"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.6.1",
+    "@types/jest": "^29.5.3",
+    "@types/node": "^20.4.4",
+    "caip": "1.1.0",
+    "husky": "^8.0.3",
+    "jest": "^29.6.1",
+    "microbundle": "^0.15.1",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.6.0",
+    "typescript": "^5.1.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": false,
+    "trailingComma": "es5"
+  }
+}
